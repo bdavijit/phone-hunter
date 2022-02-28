@@ -1,0 +1,67 @@
+#Items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+
+  margin: auto;
+  width: 95%;
+  max-width: 1200px;
+  
+
+
+
+}
+.MyCard {
+  /* display: flex;
+   flex-direction: column;
+   border: 1px solid black; */
+
+  display: grid;
+  align-items: end;
+
+  
+  border: .5px solid rgba(24, 24, 24, 0.267);
+  border-radius: 10px;
+  
+  /* box-shadow: .2px 0px 0px 2px pink inset; */
+  transition: transform .2s; /* Animation */
+}
+.MyCard:hover{
+    transform: scale(1.02);
+    
+}
+
+.image_height {
+  height: 25rem;
+  margin: auto;
+  padding: 5px;
+}
+
+.my-img-fluid {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+@media screen and (max-width: 1161px) {
+  #Items {
+    grid-template-columns: repeat(2, 1fr);
+    /* margin-left: 5%;
+    margin-right: 5%; */
+
+}
+
+  .MyCard:hover{
+    transform: scale(1.01);
+    
+}
+}
+
+@media screen and (max-width: 780px) {
+  #Items {
+    grid-template-columns: repeat(1, 1fr);
+    /* margin-left: 5%;
+    margin-right: 5%; */
+  }
+
+}
