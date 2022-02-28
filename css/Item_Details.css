@@ -1,0 +1,29 @@
+#Item_Details{
+    /* display: grid;
+    justify-content: center; */
+    border: 1px solid #007bff;
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+
+.image_height2{
+    height: 25vw;
+    margin: auto;
+    padding: 5%;
+    /* border: 1px solid black; */
+}
+
+@media screen and (max-width: 768px) {
+    .image_height2{
+        height: 40vw;
+    }
+}
