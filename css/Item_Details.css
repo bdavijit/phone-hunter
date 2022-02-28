@@ -16,6 +16,7 @@
 th,
 td {
   font-size: 1.5vw;
+  max-width: 100%;
 }
 
 .image_height2 {
@@ -31,6 +32,13 @@ td {
   }
   th,
   td {
-    font-size: 2.5vw;
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 576px) {
+ 
+  th,
+  td {
+    font-size: 1.8vw;
   }
 }

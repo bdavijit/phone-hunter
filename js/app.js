@@ -126,12 +126,12 @@ const displayDetails = (Item) => {
           <tr>
             <th scope="row">7</th>
             <td>Others</td>
-            <td>WLAN: ${Item.others.WLAN}, <br />
-            Bluetooth: ${Item.others.Bluetooth}, <br />
-            GPS: ${Item.others.GPS},  <br />
-            NFC: ${Item.others.NFC}, <br />
-            Radio: ${Item.others.Radio}, <br />
-            USB: ${Item.others.USB}</td> <br />
+            <td>WLAN: ${Item.others.WLAN.slice(0, 20) }, <br />
+            Bluetooth: ${Item.others.Bluetooth.slice(0, 20) }, <br />
+            GPS: ${Item.others.GPS.slice(0, 20) },  <br />
+            NFC: ${Item.others.NFC.slice(0, 20) }, <br />
+            Radio: ${Item.others.Radio.slice(0, 20) }, <br />
+            USB: ${Item.others.USB.slice(0, 20) }</td> <br />
           </tr>
         </tbody>
       </table>
