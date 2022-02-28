@@ -47,7 +47,6 @@ const displayMobile = (Items) => {
   }
 };
 
-document.getElementById("Spinner").style.display = "none";
 
 const LoadDetails = (id) => {
   Item_Details.innerHTML = "";
@@ -129,6 +128,12 @@ const displayDetails = (Item) => {
    `;
 
   Item_Details.appendChild(div);
+  document.getElementById("Item_Details").style.display = "block";
 
   document.getElementById("Spinner").style.display = "none";
 };
+
+
+
+document.getElementById("Spinner").style.display = "none";
+document.getElementById("Item_Details").style.display = "none";
