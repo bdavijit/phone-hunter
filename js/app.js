@@ -5,7 +5,9 @@ let inputText = null;
 
 const LoadItem = () => {
   Items_ID.innerHTML = "";
+  Item_Details.innerHTML = "";
   document.getElementById("Spinner").style.display = "block";
+  document.getElementById("Item_Details").style.display = "none";
   inputText = InputField_ID.value;
 
   const URL = `https://openapi.programming-hero.com/api/phones?search=${inputText}`;
@@ -18,6 +20,7 @@ const displayMobile = (Items) => {
   console.log(Items);
 
   if (Items.length === 0) {
+    document.getElementById("Item_Details").style.display = "none";
     document.getElementById("Spinner").style.display = "none";
     alert("No result found");
   } else {
@@ -46,7 +49,6 @@ const displayMobile = (Items) => {
     document.getElementById("Spinner").style.display = "none";
   }
 };
-
 
 const LoadDetails = (id) => {
   Item_Details.innerHTML = "";
@@ -132,8 +134,6 @@ const displayDetails = (Item) => {
 
   document.getElementById("Spinner").style.display = "none";
 };
-
-
 
 document.getElementById("Spinner").style.display = "none";
 document.getElementById("Item_Details").style.display = "none";
