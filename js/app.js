@@ -2,6 +2,8 @@ const Items_ID = document.getElementById("Items");
 const Item_Details = document.getElementById("Item_Details");
 const InputField_ID = document.getElementById("InputField");
 let inputText = null;
+let start = 1,
+  NotShowAll = true;
 
 const LoadItem = () => {
   Items_ID.innerHTML = "";
@@ -24,7 +26,13 @@ const displayMobile = (Items) => {
     document.getElementById("Spinner").style.display = "none";
     alert("No result found");
   } else {
+    start = 1;
+
     Items.forEach((Item) => {
+      if(start > 20 && NotShowAll == true){
+        document.getElementById("Spinner").style.display = "none";
+        return;
+      }
       const div = document.createElement("div");
       div.classList.add("MyCard");
       div.innerHTML = `       
@@ -45,6 +53,7 @@ const displayMobile = (Items) => {
    `;
 
       Items_ID.appendChild(div);
+      start++;
     });
     document.getElementById("Spinner").style.display = "none";
   }
