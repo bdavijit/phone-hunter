@@ -15,7 +15,7 @@
   display: grid;
   align-items: end;
 
-  border: 0.5px solid rgba(24, 24, 24, 0.267);
+  border: 0.5px solid #007bff;
   border-radius: 10px;
 
   /* box-shadow: .2px 0px 0px 2px pink inset; */

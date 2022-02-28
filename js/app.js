@@ -12,8 +12,10 @@ const LoadItem = () => {
 
 const displayMobile = (Items) => {
   console.log(Items);
+  // Items = Items.data;
+  // console.log(Items);
 
-  if (Items === null) {
+  if (Items.length === 0) {
     document.getElementById("Spinner").style.display = "none";
     alert("No result found");
   } else {
