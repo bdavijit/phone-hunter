@@ -6,10 +6,6 @@
   margin: auto;
   width: 95%;
   max-width: 1200px;
-  
-
-
-
 }
 .MyCard {
   /* display: flex;
@@ -19,16 +15,14 @@
   display: grid;
   align-items: end;
 
-  
-  border: .5px solid rgba(24, 24, 24, 0.267);
+  border: 0.5px solid rgba(24, 24, 24, 0.267);
   border-radius: 10px;
-  
+
   /* box-shadow: .2px 0px 0px 2px pink inset; */
-  transition: transform .2s; /* Animation */
+  transition: transform 0.2s; /* Animation */
 }
-.MyCard:hover{
-    transform: scale(1.02);
-    
+.MyCard:hover {
+  transform: scale(1.02);
 }
 
 .image_height {
@@ -48,13 +42,11 @@
     grid-template-columns: repeat(2, 1fr);
     /* margin-left: 5%;
     margin-right: 5%; */
+  }
 
-}
-
-  .MyCard:hover{
+  .MyCard:hover {
     transform: scale(1.01);
-    
-}
+  }
 }
 
 @media screen and (max-width: 780px) {
@@ -63,5 +55,4 @@
     /* margin-left: 5%;
     margin-right: 5%; */
   }
-
 }
