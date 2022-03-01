@@ -24,10 +24,18 @@ const LoadItem = () => {
 
   // handling Number error
   if (isNaN(parseFloat(inputText))) {
-    const URL = `https://openapi.programming-hero.com/api/phones?search=${inputText}`;
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => displayMobile(data.data));
+    try {
+      const URL = `https://openapi.programming-hero.com/api/phones?search=${inputText}`;
+      fetch(URL)
+        .then((res) => res.json())
+        .then((data) => displayMobile(data.data));
+    }
+    catch(err) {
+      alert(err.message);
+    }
+
+
+
   }else{
     alert("Number is not allowed");
     document.getElementById("Spinner").style.display = "none";
@@ -96,10 +104,18 @@ const displayMobile = (Items) => {
 const LoadDetails = (id) => {
   Item_Details.innerHTML = "";
   document.getElementById("Spinner").style.display = "block";
-  const URL = `https://openapi.programming-hero.com/api/phone/${id}`;
-  fetch(URL)
-    .then((res) => res.json())
-    .then((data) => displayDetails(data.data));
+
+  try {
+    const URL = `https://openapi.programming-hero.com/api/phone/${id}`;
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => displayDetails(data.data));
+  }
+  catch(err) {
+    console.log(err);
+    document.getElementById("error").innerHTML = err.message;
+  }
+
 };
 
 // display product details
