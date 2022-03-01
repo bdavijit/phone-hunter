@@ -143,7 +143,7 @@ const displayDetails = (Item) => {
           <tr>
             <th scope="row">2</th>
             <td>ReleaseDate</td>
-            <td>${Item.releaseDate }</td>
+            <td>${Item.releaseDate ? Item.releaseDate : "No Date found"}</td>
           </tr>
           <tr>
             <th scope="row">3</th>
