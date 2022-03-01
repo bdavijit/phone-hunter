@@ -143,7 +143,7 @@ const displayDetails = (Item) => {
           <tr>
             <th scope="row">2</th>
             <td>ReleaseDate</td>
-            <td>${Item.releaseDate ? Item.releaseDate : "No Date found"}</td>
+            <td>${Item.releaseDate ? Item.releaseDate : "No Data found"}</td>
           </tr>
           <tr>
             <th scope="row">3</th>
@@ -163,17 +163,17 @@ const displayDetails = (Item) => {
           <tr>
             <th scope="row">6</th>
             <td>Sensors</td>
-            <td>${Item.mainFeatures.sensors !== undefined ? Item.mainFeatures.sensors : "No Date found"}</td>
+            <td>${Item.mainFeatures.sensors !== undefined ? Item.mainFeatures.sensors : "No Data found"}</td>
           </tr>
           <tr>
             <th scope="row">7</th>
             <td>Others</td>
-            <td>WLAN: ${Item.others !== undefined ? Item.others.WLAN : "No Date found"}, <br />
-            Bluetooth: ${Item.others !== undefined ? Item.others.Bluetooth : "No Date found"}, <br />
-            GPS: ${Item.others !== undefined ? Item.others.GPS : "No Date found"},  <br />
-            NFC: ${Item.others !== undefined ? Item.others.NFC : "No Date found"}, <br />
-            Radio: ${Item.others !== undefined ? Item.others.Radio : "No Date found"}, <br />
-            USB: ${Item.others !== undefined ? Item.others.USB : "No Date found"}</td> <br />
+            <td>WLAN: ${Item.others !== undefined ? Item.others.WLAN : "No Data found"}, <br />
+            Bluetooth: ${Item.others !== undefined ? Item.others.Bluetooth : "No Data found"}, <br />
+            GPS: ${Item.others !== undefined ? Item.others.GPS : "No Data found"},  <br />
+            NFC: ${Item.others !== undefined ? Item.others.NFC : "No Data found"}, <br />
+            Radio: ${Item.others !== undefined ? Item.others.Radio : "No Data found"}, <br />
+            USB: ${Item.others !== undefined ? Item.others.USB : "No Data found"}</td> <br />
           </tr>
         </tbody>
       </table>
