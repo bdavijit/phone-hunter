@@ -29,7 +29,7 @@ const displayMobile = (Items) => {
     start = 1;
 
     Items.forEach((Item) => {
-      if(start > 20 && NotShowAll === true){
+      if (start > 20 && NotShowAll === true) {
         document.getElementById("Spinner").style.display = "none";
         return;
       }
@@ -56,6 +56,13 @@ const displayMobile = (Items) => {
       start++;
     });
     document.getElementById("Spinner").style.display = "none";
+    if(NotShowAll === false){
+      document.getElementById("ShowAll").style.display = "none";
+      NotShowAll = true;
+    }else{
+      document.getElementById("ShowAll").style.display = "block";
+    }
+    
   }
 };
 
@@ -85,13 +92,6 @@ const displayDetails = (Item) => {
     <br />
     <div class="">
       <table class="table border-primary w-100">
-        <thead class="border-primary">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
@@ -126,12 +126,12 @@ const displayDetails = (Item) => {
           <tr>
             <th scope="row">7</th>
             <td>Others</td>
-            <td>WLAN: ${Item.others.WLAN }, <br />
-            Bluetooth: ${Item.others.Bluetooth }, <br />
-            GPS: ${Item.others.GPS },  <br />
-            NFC: ${Item.others.NFC }, <br />
-            Radio: ${Item.others.Radio }, <br />
-            USB: ${Item.others.USB }</td> <br />
+            <td>WLAN: ${Item.others.WLAN}, <br />
+            Bluetooth: ${Item.others.Bluetooth}, <br />
+            GPS: ${Item.others.GPS},  <br />
+            NFC: ${Item.others.NFC}, <br />
+            Radio: ${Item.others.Radio}, <br />
+            USB: ${Item.others.USB}</td> <br />
           </tr>
         </tbody>
       </table>
@@ -139,10 +139,24 @@ const displayDetails = (Item) => {
    `;
 
   Item_Details.appendChild(div);
+
   document.getElementById("Item_Details").style.display = "block";
 
   document.getElementById("Spinner").style.display = "none";
 };
 
+const Show_All = () => {
+  
+  NotShowAll = false;
+  LoadItem();
+  // back();
+  
+};
+const back = () => {
+  NotShowAll = true;
+  document.getElementById("ShowAll").style.display = "none";
+};
+
 document.getElementById("Spinner").style.display = "none";
 document.getElementById("Item_Details").style.display = "none";
+document.getElementById("ShowAll").style.display = "none";
