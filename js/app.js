@@ -55,6 +55,7 @@ const displayMobile = (Items) => {
         onclick="LoadDetails('${Item.slug}')"
         >Details</a>
       </div>
+
    `;
 
       Items_ID.appendChild(div);
@@ -142,6 +143,16 @@ const displayDetails = (Item) => {
         </tbody>
       </table>
     </div>
+    <div class="d-grid gap-2 col-6 mx-auto mt-4 mb-4">
+    <button
+      id="Close"
+      class="btn btn-danger"
+      type="button"
+      onclick="CloseDetails()"
+    >
+       Close
+    </button>
+  </div>
    `;
 
   Item_Details.appendChild(div);
@@ -153,6 +164,10 @@ const displayDetails = (Item) => {
 const Show_All = () => {
   NotShowAll = false;
   LoadItem();
+};
+const CloseDetails = () => {
+  document.getElementById("Item_Details").style.display = "none";
+  Item_Details.innerHTML = "";
 };
 
 // Hidden sections when loading first
