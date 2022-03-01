@@ -12,7 +12,12 @@ let start = 1,
 // Load search data
 const LoadItem = () => {
   Items_ID.innerHTML = "";
-  Item_Details.innerHTML = "";
+  
+ // To keep detailed box items
+  if (NotShowAll === true) {
+    Item_Details.innerHTML = "";
+  }
+
   document.getElementById("Spinner").style.display = "block";
   document.getElementById("Item_Details").style.display = "none";
   inputText = InputField_ID.value;
@@ -67,6 +72,11 @@ const displayMobile = (Items) => {
       document.getElementById("ShowAll").style.display = "none";
       //Return to normal for further search
       NotShowAll = true;
+      // To keep detailed box items
+      if(Item_Details.innerHTML !==  ""){
+        document.getElementById("Item_Details").style.display = "block";
+      }
+      
     } else {
       document.getElementById("ShowAll").style.display = "block";
     }
