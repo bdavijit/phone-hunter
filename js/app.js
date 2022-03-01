@@ -62,17 +62,17 @@ const displayMobile = (Items) => {
       div.classList.add("MyCard");
       div.innerHTML = `       
       <div class="image_height">
-        <img src="${Item.image ? Item.image : "No Date found"}" class="my-img-fluid" alt="picture" />
+        <img src="${Item.image}" class="my-img-fluid" alt="picture" />
       </div>
       <div class="card-body">
-        <h5 class="card-title text-center">${Item.phone_name ? Item.phone_name : "No Date found"}</h5>
+        <h5 class="card-title text-center">${Item.phone_name}</h5>
         <p class="card-text text-center">
-        ${Item.brand ? Item.brand : "No Date found"}
+        ${Item.brand }
         </p>
         <a 
         href="#" 
         class="btn btn-primary d-flex justify-content-center" 
-        onclick="LoadDetails('${Item.slug ? Item.slug : "No Date found"}')"
+        onclick="LoadDetails('${Item.slug}')"
         >Details</a>
       </div>
 
@@ -125,11 +125,11 @@ const displayDetails = (Item) => {
   div.innerHTML = `       
       <div class="image_height2">
       <img
-        src="${Item.image ? Item.image : "No Date found"}"
+        src="${Item.image}"
         class="my-img-fluid"
         alt="picture"
       />
-      <h2 style="margin: 10px 0px">${Item.name ? Item.name : "No Date found"}</h2>
+      <h2 style="margin: 10px 0px">${Item.name}</h2>
     </div>
     <br />
     <div class="">
@@ -138,42 +138,42 @@ const displayDetails = (Item) => {
           <tr>
             <th scope="row">1</th>
             <td>Brand</td>
-            <td>${Item.brand ? Item.brand : "No Date found"}</td>
+            <td>${Item.brand}</td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>ReleaseDate</td>
-            <td>${Item.releaseDate ? Item.releaseDate : "No Date found"}</td>
+            <td>${Item.releaseDate }</td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>ChipSet</td>
-            <td>${Item.mainFeatures.chipSet ? Item.mainFeatures.chipSet : "No Date found"}</td>
+            <td>${Item.mainFeatures.chipSet}</td>
           </tr>
           <tr>
             <th scope="row">4</th>
             <td>DisplaySize</td>
-            <td>${Item.mainFeatures.displaySize ? Item.mainFeatures.displaySize : "No Date found"}</td>
+            <td>${Item.mainFeatures.displaySize}</td>
           </tr>
           <tr>
             <th scope="row">5</th>
             <td>Storage</td>
-            <td>${Item.mainFeatures.storage ? Item.mainFeatures.storage : "No Date found"}</td>
+            <td>${Item.mainFeatures.storage}</td>
           </tr>
           <tr>
             <th scope="row">6</th>
             <td>Sensors</td>
-            <td>${Item.mainFeatures.sensors ? Item.mainFeatures.sensors : "No Date found"}</td>
+            <td>${Item.mainFeatures.sensors !== undefined ? Item.mainFeatures.sensors : "No Date found"}</td>
           </tr>
           <tr>
             <th scope="row">7</th>
             <td>Others</td>
-            <td>WLAN: ${Item.others.WLAN ? Item.others.WLAN : "No Date found"}, <br />
-            Bluetooth: ${Item.others.Bluetooth ? Item.others.Bluetooth : "No Date found"}, <br />
-            GPS: ${Item.others.GPS ? Item.others.GPS : "No Date found"},  <br />
-            NFC: ${Item.others.NFC ? Item.others.NFC : "No Date found"}, <br />
-            Radio: ${Item.others.Radio ? Item.others.Radio : "No Date found"}, <br />
-            USB: ${Item.others.USB ? Item.others.USB : "No Date found"}</td> <br />
+            <td>WLAN: ${Item.others !== undefined ? Item.others.WLAN : "No Date found"}, <br />
+            Bluetooth: ${Item.others !== undefined ? Item.others.Bluetooth : "No Date found"}, <br />
+            GPS: ${Item.others !== undefined ? Item.others.GPS : "No Date found"},  <br />
+            NFC: ${Item.others !== undefined ? Item.others.NFC : "No Date found"}, <br />
+            Radio: ${Item.others !== undefined ? Item.others.Radio : "No Date found"}, <br />
+            USB: ${Item.others !== undefined ? Item.others.USB : "No Date found"}</td> <br />
           </tr>
         </tbody>
       </table>
