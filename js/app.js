@@ -76,6 +76,8 @@ const displayMobile = (Items) => {
       if(Item_Details.innerHTML !==  ""){
         document.getElementById("Item_Details").style.display = "block";
       }
+      //scroll to bottom
+      window.scrollTo(0,document.body.scrollHeight);
       
     } else {
       document.getElementById("ShowAll").style.display = "block";
