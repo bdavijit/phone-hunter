@@ -34,6 +34,7 @@ const displayMobile = (Items) => {
   if (Items.length === 0) {
     document.getElementById("Item_Details").style.display = "none";
     document.getElementById("Spinner").style.display = "none";
+    document.getElementById("ShowAll").style.display = "none";
     alert("No result found");
   } else {
     // control item numbers
