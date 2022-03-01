@@ -22,10 +22,16 @@ const LoadItem = () => {
   document.getElementById("Item_Details").style.display = "none";
   inputText = InputField_ID.value;
 
-  const URL = `https://openapi.programming-hero.com/api/phones?search=${inputText}`;
-  fetch(URL)
-    .then((res) => res.json())
-    .then((data) => displayMobile(data.data));
+  // handling Number error
+  if (isNaN(parseFloat(inputText))) {
+    const URL = `https://openapi.programming-hero.com/api/phones?search=${inputText}`;
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => displayMobile(data.data));
+  }else{
+    alert("Number is not allowed");
+    document.getElementById("Spinner").style.display = "none";
+  }
 };
 
 // display search data
