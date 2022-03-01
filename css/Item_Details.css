@@ -1,6 +1,5 @@
+/* Item Details container */
 #Item_Details {
-  /* display: grid;
-    justify-content: center; */
   border: 1px solid #007bff;
   width: 95%;
   max-width: 1200px;
@@ -13,19 +12,21 @@
   border-radius: 10px;
 }
 
+/* text responsive */
 th,
 td {
   font-size: 1.5vw;
   max-width: 100%;
 }
 
+/*image height (details box ) */
 .image_height2 {
   height: 25vw;
   margin: auto;
   padding: 5%;
-  /* border: 1px solid black; */
 }
-
+/* 
+mobile responsive with bootstrap 5 breakpoint*/
 @media screen and (max-width: 768px) {
   .image_height2 {
     height: 40vw;
@@ -35,6 +36,8 @@ td {
     font-size: 2vw;
   }
 }
+/* 
+mobile responsive with bootstrap 5 breakpoint */
 @media screen and (max-width: 576px) {
   th,
   td {

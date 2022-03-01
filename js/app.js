@@ -1,10 +1,15 @@
+// Import Html ID/item
 const Items_ID = document.getElementById("Items");
 const Item_Details = document.getElementById("Item_Details");
 const InputField_ID = document.getElementById("InputField");
+//Using variables for a better future update
 let inputText = null;
+
+// variables for control item numbers
 let start = 1,
   NotShowAll = true;
 
+// Load search data
 const LoadItem = () => {
   Items_ID.innerHTML = "";
   Item_Details.innerHTML = "";
@@ -18,16 +23,16 @@ const LoadItem = () => {
     .then((data) => displayMobile(data.data));
 };
 
+// display search data
 const displayMobile = (Items) => {
-  console.log(Items);
-
+  //No result found
   if (Items.length === 0) {
     document.getElementById("Item_Details").style.display = "none";
     document.getElementById("Spinner").style.display = "none";
     alert("No result found");
   } else {
+    // control item numbers
     start = 1;
-
     Items.forEach((Item) => {
       if (start > 20 && NotShowAll === true) {
         document.getElementById("Spinner").style.display = "none";
@@ -56,16 +61,18 @@ const displayMobile = (Items) => {
       start++;
     });
     document.getElementById("Spinner").style.display = "none";
-    if(NotShowAll === false){
+    // Return to normal after showing all search data
+    if (NotShowAll === false) {
       document.getElementById("ShowAll").style.display = "none";
+      //Return to normal for further search
       NotShowAll = true;
-    }else{
+    } else {
       document.getElementById("ShowAll").style.display = "block";
     }
-    
   }
 };
 
+// load product details
 const LoadDetails = (id) => {
   Item_Details.innerHTML = "";
   document.getElementById("Spinner").style.display = "block";
@@ -75,9 +82,8 @@ const LoadDetails = (id) => {
     .then((data) => displayDetails(data.data));
 };
 
+// display product details
 const displayDetails = (Item) => {
-  console.log(Item);
-
   const div = document.createElement("div");
 
   div.innerHTML = `       
@@ -141,22 +147,15 @@ const displayDetails = (Item) => {
   Item_Details.appendChild(div);
 
   document.getElementById("Item_Details").style.display = "block";
-
   document.getElementById("Spinner").style.display = "none";
 };
 
 const Show_All = () => {
-  
   NotShowAll = false;
   LoadItem();
-  // back();
-  
-};
-const back = () => {
-  NotShowAll = true;
-  document.getElementById("ShowAll").style.display = "none";
 };
 
+// Hidden sections when loading first
 document.getElementById("Spinner").style.display = "none";
 document.getElementById("Item_Details").style.display = "none";
 document.getElementById("ShowAll").style.display = "none";
