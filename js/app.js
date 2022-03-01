@@ -29,7 +29,7 @@ const displayMobile = (Items) => {
     start = 1;
 
     Items.forEach((Item) => {
-      if(start > 20 && NotShowAll == true){
+      if(start > 20 && NotShowAll === true){
         document.getElementById("Spinner").style.display = "none";
         return;
       }
