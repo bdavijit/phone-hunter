@@ -112,8 +112,8 @@ const LoadDetails = (id) => {
       .then((data) => displayDetails(data.data));
   }
   catch(err) {
-    console.log(err);
-    document.getElementById("error").innerHTML = err.message;
+    
+    alert(err.message);
   }
 
 };
@@ -125,11 +125,11 @@ const displayDetails = (Item) => {
   div.innerHTML = `       
       <div class="image_height2">
       <img
-        src="${Item.image}"
+        src="${Item.image ? Item.image : "No Data found"}"
         class="my-img-fluid"
         alt="picture"
       />
-      <h2 style="margin: 10px 0px">${Item.name}</h2>
+      <h2 style="margin: 10px 0px">${Item.name ? Item.name : "No Data found"}</h2>
     </div>
     <br />
     <div class="">
@@ -138,7 +138,7 @@ const displayDetails = (Item) => {
           <tr>
             <th scope="row">1</th>
             <td>Brand</td>
-            <td>${Item.brand}</td>
+            <td>${Item.brand ? Item.brand : "No Data found"}</td>
           </tr>
           <tr>
             <th scope="row">2</th>
@@ -148,22 +148,22 @@ const displayDetails = (Item) => {
           <tr>
             <th scope="row">3</th>
             <td>ChipSet</td>
-            <td>${Item.mainFeatures.chipSet}</td>
+            <td>${Item.mainFeatures.chipSet ? Item.mainFeatures.chipSet : "No Data found"}</td>
           </tr>
           <tr>
             <th scope="row">4</th>
             <td>DisplaySize</td>
-            <td>${Item.mainFeatures.displaySize}</td>
+            <td>${Item.mainFeatures.displaySize ? Item.mainFeatures.displaySize  : "No Data found"}</td>
           </tr>
           <tr>
             <th scope="row">5</th>
             <td>Storage</td>
-            <td>${Item.mainFeatures.storage}</td>
+            <td>${Item.mainFeatures.storage ? Item.mainFeatures.storage : "No Data found"}</td>
           </tr>
           <tr>
             <th scope="row">6</th>
             <td>Sensors</td>
-            <td>${Item.mainFeatures.sensors !== undefined ? Item.mainFeatures.sensors : "No Data found"}</td>
+            <td>${Item.mainFeatures.sensors !== undefined || Item.mainFeatures.sensors ? Item.mainFeatures.sensors : "No Data found"}</td>
           </tr>
           <tr>
             <th scope="row">7</th>
